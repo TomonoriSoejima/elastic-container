@@ -156,6 +156,7 @@ services:
         - fleetserverdata:/usr/share/elastic-agent
       ports:
         - ${FLEET_PORT}:8220
+        - 8200:8200
       restart: always
       user: root
       environment:
