@@ -1,0 +1,6 @@
+Flask
+opentelemetry-sdk
+opentelemetry-distro
+opentelemetry-instrumentation-flask
+opentelemetry-exporter-otlp
+setuptools

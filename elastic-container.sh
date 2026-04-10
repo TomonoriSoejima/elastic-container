@@ -254,6 +254,13 @@ case "${ACTION}" in
   set_fleet_values > /dev/null 2>&1
   echo
 
+  if [ -f "license-release-stack-platinum.json" ]; then
+    echo "Applying Platinum license."
+    curl -k -s -u "${ELASTIC_USERNAME}:${ELASTIC_PASSWORD}" -X PUT "${LOCAL_ES_URL}/_license" -H "Content-Type: application/json" -d @license-release-stack-platinum.json > /dev/null 2>&1
+    echo "License applied."
+    echo
+  fi
+
   echo "READY SET GO!"
   echo
   echo "Browse to https://localhost:${KIBANA_PORT}"
