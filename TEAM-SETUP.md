@@ -96,6 +96,15 @@ cd apm-test
 # then hit http://localhost:8080/test to generate a trace
 ```
 
+Or via Docker (token injected at runtime):
+
+```bash
+docker build -t apm-test .
+docker run -p 8080:8080 \
+  -e OTEL_EXPORTER_OTLP_HEADERS="Authorization=Bearer <your_secret_token>" \
+  apm-test
+```
+
 Check **Observability → APM → Services** in Kibana — you should see `tomo-apm-test` appear within a few seconds.
 
 ---
