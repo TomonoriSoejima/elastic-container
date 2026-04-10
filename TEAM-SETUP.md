@@ -2,8 +2,7 @@
 
 Spins up a full Elastic stack locally using Docker: Elasticsearch, Kibana, Fleet, APM, and Detection Engine — all TLS-secured and pre-configured.
 
-Upstream repo: https://github.com/peasead/elastic-container  
-Branch in use: `apm-local-setup` (adds port 8200 for local APM)
+Repo: https://github.com/TomonoriSoejima/elastic-container (branch: `apm-local-setup`)
 
 ---
 
@@ -16,9 +15,8 @@ Branch in use: `apm-local-setup` (adds port 8200 for local APM)
 ## Setup
 
 ```bash
-git clone https://github.com/peasead/elastic-container
+git clone https://github.com/TomonoriSoejima/elastic-container
 cd elastic-container
-git checkout apm-local-setup
 ```
 
 Edit `.env` and set your passwords (replace `changeme`):
@@ -123,4 +121,4 @@ Or check Fleet status in Kibana under **Fleet → Agents** — once Fleet Server
 
 ---
 
-For all other commands and options, see the [upstream README](https://github.com/peasead/elastic-container).
+For all other commands and options, see the [upstream README](https://github.com/peasead/elastic-container/blob/main/README.md).
