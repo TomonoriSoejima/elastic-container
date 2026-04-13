@@ -45,6 +45,28 @@ Wait for `READY SET GO!` — then browse to **https://localhost:5601**
 
 Login: `elastic` / `<your ELASTIC_PASSWORD>`
 
+### Forgot your password?
+
+If you forget the `elastic` user password, reset it from the running container:
+
+```bash
+docker exec ecp-elasticsearch \
+  /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic -b
+```
+
+This prints a new password (look for `New value:`). Verify it works:
+
+```bash
+curl -k -s -u 'elastic:<new_password>' \
+  https://localhost:9200/_security/_authenticate | jq -r '.username'
+```
+
+If successful, it returns `elastic`. Then update `.env`:
+
+```dotenv
+ELASTIC_PASSWORD=<new_password>
+```
+
 ---
 
 ## Enrolling an Elastic Agent
